@@ -1,0 +1,2 @@
+class PictkresController < ApplicationController
+end
