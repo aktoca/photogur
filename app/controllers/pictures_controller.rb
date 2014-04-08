@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @pictures = Picture.new
+    @picture = Picture.new
   end
 
   def create
@@ -19,9 +19,6 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
-  end
-
-  def new
   end
 
   private
