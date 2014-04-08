@@ -1,19 +1,33 @@
 class PicturesController < ApplicationController
+
   def index
     @pictures = Picture.all
   end
 
+  def new
+    @pictures = Picture.new
+  end
+
+  def create
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      redirect_to picture_url
+    else
+      render :new
+    end
+  end
+
   def show
-    @picture = Pictures.find[params[:id].to_i]
+    @picture = Picture.find(params[:id])
   end
 
   def new
   end
 
-  def create
-    render :text => "Saving a picture. URL: #{params[:url]},  Title: #{params[:title]}, Artist: #{params[:artist]}"
+  private
+  def picture_params
+    params.require(:picture).permit(:artist, :title, :url)
   end
-
 
 
 
