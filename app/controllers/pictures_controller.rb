@@ -1,5 +1,4 @@
 class PicturesController < ApplicationController
-
   def index
     @pictures = Picture.all
   end
@@ -18,6 +17,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+
     @picture = Picture.find(params[:id])
   end
 
@@ -31,8 +31,14 @@ class PicturesController < ApplicationController
     if @picture.update_attributes(picture_params)
       redirect_to "/pictures/#{@pictures.id}"
     else 
-      ender :edit
+      render :edit
     end
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to pictures_url
   end
 
   private
