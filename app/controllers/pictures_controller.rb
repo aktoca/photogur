@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+
   def index
     @pictures = Picture.all
   end
@@ -17,7 +18,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-
     @picture = Picture.find(params[:id])
   end
 
@@ -45,8 +45,5 @@ class PicturesController < ApplicationController
   def picture_params
     params.require(:picture).permit(:artist, :title, :url)
   end
-
-
-
 
 end
