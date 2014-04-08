@@ -18,4 +18,18 @@ class PicturesController < ApplicationController
       }
     ]
   end
+  def picture0
+    @picture = {
+        :title => "The old church on the coast of the white sea",
+        :artist => "Sergey Ershov",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/house.jgp"
+      }
+    end
+  def picture1
+      @picture = {
+        :title => "Sea Power",
+        :artist => "Stephen Scullion",
+        :url => "http://monicao.s3.amazonaws.com/bitmaker/wave.jgp"
+      }
+  end
 end
