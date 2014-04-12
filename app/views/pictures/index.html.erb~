@@ -10,7 +10,11 @@
 
 <h1>Most recent pictures</h1>
 <ul>
-  <% @most_recent_pictures.each do |pucture| %>
+  <% @most_recent_pictures.each do |picture| %>
     <li> <%= picture.title %> </li>
   <% end %> 
 </ul>
+
+<h1># of photos more than a month old pictures</h1>
+<ul>
+  <%= @created_before%>
